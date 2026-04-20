@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+redis_scan_records.db
 # Distribution / packaging
 .Python
 build/
