@@ -1,0 +1,144 @@
+/* ========== 全局基础样式（仅通用重置，无实际样式） ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== 窗口标题/基础容器（唯一ID） ========== */
+#main_window {
+    font-family: "Microsoft YaHei", "Consolas", sans-serif;
+    font-size: 9pt;
+}
+
+/* ========== 输入区域 ========== */
+#input_label {
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 5px;
+}
+#target_textarea {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #ffffff;
+    font-family: "Consolas";
+    font-size: 9pt;
+    color: #333333;
+}
+#target_textarea::placeholder {
+    color: #999999;
+}
+#target_textarea:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+/* ========== 按钮区域 ========== */
+#start_button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #4CAF50;
+}
+#start_button:hover {
+    background-color: #45a049;
+}
+#start_button:disabled {
+    background-color: #81c784;
+    cursor: not-allowed;
+}
+
+#stop_button {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #f44336;
+}
+#stop_button:hover {
+    background-color: #d32f2f;
+}
+#stop_button:disabled {
+    background-color: #e57373;
+    cursor: not-allowed;
+}
+
+#clear_result_btn {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #607D8B;
+}
+#clear_result_btn:hover {
+    background-color: #546E7A;
+}
+
+#clear_record_btn {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #795548;
+}
+#clear_record_btn:hover {
+    background-color: #6D4C41;
+}
+
+#reload_style_btn {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #2196F3;
+}
+#reload_style_btn:hover {
+    background-color: #1976D2;
+}
+
+/* ========== 进度条 ========== */
+#progress_bar {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    text-align: center;
+    height: 20px;
+    margin: 10px 0;
+}
+#progress_bar::chunk {
+    background-color: #2196F3;
+    border-radius: 3px;
+}
+
+/* ========== 结果区域 ========== */
+#result_label {
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 5px;
+}
+#result_textarea {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    font-family: "Consolas";
+    font-size: 9pt;
+    color: #333333;
+}
+#result_textarea::selection {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* ========== 状态栏 ========== */
+#status_bar {
+    color: #666666;
+    font-size: 8pt;
+    border-top: 1px solid #eeeeee;
+}
