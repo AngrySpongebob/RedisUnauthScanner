@@ -1,12 +1,12 @@
 import re
+
 from PyQt6.QtWidgets import (
-    QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, QWidget,
+    QMainWindow, QVBoxLayout, QHBoxLayout, QWidget,
     QTextEdit, QPushButton, QLabel, QProgressBar, QMessageBox
 )
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFont
-from core.worker import ScanWorker
+
 from core.database import ScanRecordDB
+from core.worker import ScanWorker
 
 
 class RedisScannerGUI(QMainWindow):
@@ -23,7 +23,7 @@ class RedisScannerGUI(QMainWindow):
     def _init_ui(self):
         """初始化界面（所有控件设置唯一ID）"""
         # 窗口基础设置
-        self.setWindowTitle("Redis 未授权访问批量扫描器（ID控样式版）")
+        self.setWindowTitle("Redis未授权访问批量扫描器")
         self.setGeometry(100, 100, 1000, 700)
         self.setMinimumSize(800, 500)
 
