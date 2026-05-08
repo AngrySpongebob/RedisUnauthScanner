@@ -1,144 +1,144 @@
-/* ========== 全局基础样式（仅通用重置，无实际样式） ========== */
+/* ==========================================
+   全局基础样式
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* ========== 窗口标题/基础容器（唯一ID） ========== */
-#main_window {
-    font-family: "Microsoft YaHei", "Consolas", sans-serif;
-    font-size: 9pt;
-}
-
-/* ========== 输入区域 ========== */
-#input_label {
-    font-weight: 500;
-    color: #333333;
-    margin-bottom: 5px;
-}
-#target_textarea {
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    padding: 8px;
-    background-color: #ffffff;
-    font-family: "Consolas";
-    font-size: 9pt;
-    color: #333333;
-}
-#target_textarea::placeholder {
-    color: #999999;
-}
-#target_textarea:focus {
-    border-color: #2196F3;
+    /* 移除 box-sizing，Qt 默认行为已足够 */
     outline: none;
 }
 
-/* ========== 按钮区域 ========== */
-#start_button {
+#main_window {
+    font-family: "Helvetica Neue", "Microsoft YaHei", "Arial", sans-serif;
+    font-size: 9pt;
+    background-color: #f5f5f5;
+}
+
+/* ==========================================
+   输入区域
+   ========================================== */
+#input_label, #result_label {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+#target_textarea, #result_textarea {
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #ffffff;
+    /* 修复字体警告：使用跨平台等宽字体 */
+    /* 优化后的原生字体栈 */
+font-family: "Cascadia Code", "Menlo", "Consolas", "DejaVu Sans Mono", "Monaco", "Courier New", monospace;
+    font-size: 13pt;
+    color: #333333;
+    selection-color: #ffffff;
+    selection-background-color: #2196F3;
+}
+
+#target_textarea:hover, #result_textarea:hover {
+    border-color: #b0b0b0;
+}
+
+#target_textarea:focus {
+    border-color: #2196F3;
+    background-color: #fafdff;
+}
+
+#target_textarea::placeholder {
+    color: #aaaaaa;
+    font-style: italic;
+}
+
+/* ==========================================
+   按钮区域
+   ========================================== */
+QPushButton {
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 8px 20px;
     color: #ffffff;
     font-weight: 500;
-    background-color: #4CAF50;
+    font-size: 9pt;
+    /* 使用渐变代替 filter，兼容性更好 */
+    background-color: #e0e0e0;
 }
-#start_button:hover {
-    background-color: #45a049;
+
+QPushButton:hover {
+    /* 悬停时稍微变亮 */
+    background-color: #e8e8e8;
 }
-#start_button:disabled {
-    background-color: #81c784;
-    cursor: not-allowed;
+
+QPushButton:pressed {
+    /* 按下时变暗，模拟下沉感 */
+    background-color: #d0d0d0;
+    padding-top: 9px;
+    padding-bottom: 7px;
 }
+
+QPushButton:disabled {
+    background-color: #e0e0e0;
+    color: #999999;
+    border: 1px solid #e0e0e0;
+}
+
+/* 按钮独立配色 - 使用渐变确保圆角正常显示 */
+#start_button {
+    background: #4CAF50;
+}
+#start_button:hover { background: #55B559; }
+#start_button:pressed { background: #439A46; }
 
 #stop_button {
-    border: none;
-    border-radius: 4px;
-    padding: 8px 20px;
-    color: #ffffff;
-    font-weight: 500;
-    background-color: #f44336;
+    background: #f44336;
 }
-#stop_button:hover {
-    background-color: #d32f2f;
-}
-#stop_button:disabled {
-    background-color: #e57373;
-    cursor: not-allowed;
-}
+#stop_button:hover { background: #E55249; }
+#stop_button:pressed { background: #D33226; }
 
 #clear_result_btn {
-    border: none;
-    border-radius: 4px;
-    padding: 8px 20px;
-    color: #ffffff;
-    font-weight: 500;
-    background-color: #607D8B;
+    background: #607D8B;
 }
-#clear_result_btn:hover {
-    background-color: #546E7A;
-}
+#clear_result_btn:hover { background: #6E8C99; }
+#clear_result_btn:pressed { background: #546E7A; }
 
 #clear_record_btn {
-    border: none;
-    border-radius: 4px;
-    padding: 8px 20px;
-    color: #ffffff;
-    font-weight: 500;
-    background-color: #795548;
+    background: #795548;
 }
-#clear_record_btn:hover {
-    background-color: #6D4C41;
-}
+#clear_record_btn:hover { background: #8D6556; }
+#clear_record_btn:pressed { background: #6D4C41; }
 
 #reload_style_btn {
-    border: none;
-    border-radius: 4px;
-    padding: 8px 20px;
-    color: #ffffff;
-    font-weight: 500;
-    background-color: #2196F3;
+    background: #2196F3;
 }
-#reload_style_btn:hover {
-    background-color: #1976D2;
+#reload_style_btn:hover { background: #3FA3F4; }
+#reload_style_btn:pressed { background: #1976D2; }
+
+/* ==========================================
+   进度条
+   ========================================== */
+#progress_bar {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    text-align: center;
+    height: 22px;
+    margin: 15px 0;
+    background-color: #f0f0f0;
 }
 
-/* ========== 进度条 ========== */
-#progress_bar {
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    text-align: center;
-    height: 20px;
-    margin: 10px 0;
-}
 #progress_bar::chunk {
     background-color: #2196F3;
-    border-radius: 3px;
+    border-radius: 5px;
+    width: 5px;
 }
 
-/* ========== 结果区域 ========== */
-#result_label {
-    font-weight: 500;
-    color: #333333;
-    margin-bottom: 5px;
-}
-#result_textarea {
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    padding: 8px;
-    background-color: #f9f9f9;
-    font-family: "Consolas";
-    font-size: 9pt;
-    color: #333333;
-}
-#result_textarea::selection {
-    background-color: #2196F3;
-    color: white;
-}
-
-/* ========== 状态栏 ========== */
+/* ==========================================
+   状态栏
+   ========================================== */
 #status_bar {
-    color: #666666;
+    color: #888888;
     font-size: 8pt;
     border-top: 1px solid #eeeeee;
+    padding: 4px 8px;
+    background-color: #fafafa;
 }
